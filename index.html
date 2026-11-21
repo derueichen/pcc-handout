@@ -126,6 +126,25 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 .pn a:hover{border-color:var(--accent)}
 .pn small{display:block;color:var(--muted);font-size:12px}
 .pn .next{text-align:right}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:14px 0 8px}
+.figs.one{grid-template-columns:minmax(0,480px)}
+figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.zoom{all:unset;cursor:zoom-in;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px;aspect-ratio:4/3;overflow:hidden}
+.figs.one .zoom{aspect-ratio:auto}
+.figs.one .zoom img{width:100%;height:auto;max-height:none}
+.zoom:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.zoom img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+figcaption{font-size:13px;line-height:1.45;color:var(--muted)}
+figcaption span{display:block;font-family:var(--font-mono);font-size:11px;opacity:.8}
+body.hide-img .figs{display:none}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,12,13,.92);display:none;flex-direction:column;align-items:center;justify-content:center;padding:16px;gap:10px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:calc(100% - 60px);background:#fff;border-radius:6px;object-fit:contain}
+.lb p{margin:0;color:#e9ecea;font-size:15px;text-align:center}
+.lb button{position:absolute;top:12px;right:12px;height:40px;min-width:40px;border-radius:8px;border:1px solid #5b676a;background:#1b2224;color:#fff;font:inherit;cursor:pointer}
+.lb .nav{top:50%;transform:translateY(-50%)}
+.lb .pv{left:12px;right:auto}
+@media print{.figs{display:grid}}
 .flash{animation:flash 1.6s ease-out}
 @keyframes flash{0%{background:var(--accent-soft)}100%{background:transparent}}
 .foot{max-width:70ch;margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
@@ -163,6 +182,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
     <div class="results" id="results" role="listbox"></div>
   </div>
   <div class="tools">
+    <button class="btn" id="imgBtn" aria-pressed="true" title="顯示或隱藏圖片">圖片</button>
     <button class="btn" id="enBtn" aria-pressed="true" title="顯示或隱藏英文原文">英文</button>
     <button class="btn fs" id="fsDown" aria-label="縮小字級">A−</button>
     <button class="btn fs" id="fsUp" aria-label="放大字級">A+</button>
@@ -538,7 +558,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch02-2"><h3 id="ch02-2"><a class="anchor" href="#ch02-2" aria-label="連結到此小節">#</a><span class="h-zh">裝備必須與預計的照護能力相符</span><span class="h-en">Equipment must match the intended care capability</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：血壓計與聽診器"><img src="images/ch02-p02-a2c9a9.webp" width="499" height="391" alt="血壓計與聽診器" loading="lazy" decoding="async"></button><figcaption>血壓計與聽診器<span>原簡報 p.2</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：尿袋"><img src="images/ch02-p02-9f6067.webp" width="931" height="643" alt="尿袋" loading="lazy" decoding="async"></button><figcaption>尿袋<span>原簡報 p.2</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：血氧計"><img src="images/ch02-p02-703bbf.webp" width="394" height="390" alt="血氧計" loading="lazy" decoding="async"></button><figcaption>血氧計<span>原簡報 p.2</span></figcaption></figure></div></section><section class="sub" data-sid="ch02-2"><h3 id="ch02-2"><a class="anchor" href="#ch02-2" aria-label="連結到此小節">#</a><span class="h-zh">裝備必須與預計的照護能力相符</span><span class="h-en">Equipment must match the intended care capability</span></h3>
 <p><strong>較佳配置　Better</strong></p>
 <ul>
 <li>已受訓者配備胸腔引流器材<ul>
@@ -562,7 +582,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch02-3"><h3 id="ch02-3"><a class="anchor" href="#ch02-3" aria-label="連結到此小節">#</a><span class="h-zh">能力取決於訓練與監測</span><span class="h-en">Training and monitoring define the capability</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：導尿管"><img src="images/ch02-p03-da4691.webp" width="298" height="397" alt="導尿管" loading="lazy" decoding="async"></button><figcaption>導尿管<span>原簡報 p.3</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：胸腔引流器材"><img src="images/ch02-p03-d35d23.webp" width="390" height="363" alt="胸腔引流器材" loading="lazy" decoding="async"></button><figcaption>胸腔引流器材<span>原簡報 p.3</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：EtCO2 監測器"><img src="images/ch02-p03-f48076.webp" width="864" height="864" alt="EtCO2 監測器" loading="lazy" decoding="async"></button><figcaption>EtCO2 監測器<span>原簡報 p.3</span></figcaption></figure></div></section><section class="sub" data-sid="ch02-3"><h3 id="ch02-3"><a class="anchor" href="#ch02-3" aria-label="連結到此小節">#</a><span class="h-zh">能力取決於訓練與監測</span><span class="h-en">Training and monitoring define the capability</span></h3>
 <p><strong>最佳配置　Best</strong></p>
 <ul>
 <li>生理監視器　<em class="en">Monitor</em></li>
@@ -574,7 +594,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>熱風保溫毯　<em class="en">Bair Hugger (Heated Blanket)</em></li>
 <li>檢驗　<em class="en">Labs</em></li>
 </ul>
-</section><section class="sub" data-sid="ch02-4"><h3 id="ch02-4"><a class="anchor" href="#ch02-4" aria-label="連結到此小節">#</a><span class="h-zh">PCC 裝備規劃</span><span class="h-en">PCC loadout planning</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：攜帶式呼吸器"><img src="images/ch02-p04-efdb46.webp" width="118" height="157" alt="攜帶式呼吸器" loading="lazy" decoding="async"></button><figcaption>攜帶式呼吸器<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：生理監視器"><img src="images/ch02-p04-391951.webp" width="144" height="156" alt="生理監視器" loading="lazy" decoding="async"></button><figcaption>生理監視器<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：輸液幫浦"><img src="images/ch02-p04-f61729.webp" width="199" height="180" alt="輸液幫浦" loading="lazy" decoding="async"></button><figcaption>輸液幫浦<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：掌上型血液分析儀"><img src="images/ch02-p04-1d1282.webp" width="129" height="331" alt="掌上型血液分析儀" loading="lazy" decoding="async"></button><figcaption>掌上型血液分析儀<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：抽吸幫浦"><img src="images/ch02-p04-76600f.webp" width="504" height="255" alt="抽吸幫浦" loading="lazy" decoding="async"></button><figcaption>抽吸幫浦<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：可攜式超音波"><img src="images/ch02-p04-3c162b.webp" width="373" height="379" alt="可攜式超音波" loading="lazy" decoding="async"></button><figcaption>可攜式超音波<span>原簡報 p.4</span></figcaption></figure></div></section><section class="sub" data-sid="ch02-4"><h3 id="ch02-4"><a class="anchor" href="#ch02-4" aria-label="連結到此小節">#</a><span class="h-zh">PCC 裝備規劃</span><span class="h-en">PCC loadout planning</span></h3>
 <ul>
 <li>依傷患人數、後送延誤時間與現有人員能力規劃<ul>
 <li class="en-line"><em class="en">Plan for casualty count, evacuation delay, and available provider capability.</em></li>
@@ -731,7 +751,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <p class="en-line"><em class="en">Minor abrasions, burns, sprains lacerations; Moderate/Mild anxiety; Closed Fractures – neurovascularly intact; Mild TBI</em></p>
 <p><strong>期待　Expectant</strong>：大範圍頭部或脊髓損傷、三度燒傷 &gt; 70%、無法存活之傷勢</p>
 <p class="en-line"><em class="en">Massive head or spinal injury, 3rd degree burns &gt; 70%, Injuries incompatible with life</em></p>
-</section><section class="sub" data-sid="ch03-8"><h3 id="ch03-8"><a class="anchor" href="#ch03-8" aria-label="連結到此小節">#</a><span class="h-zh">傷患分類與標示</span><span class="h-en">Sorting and Tagging Casualties</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：立即（Immediate）傷患範例"><img src="images/ch03-p08-ff1823.webp" width="478" height="284" alt="立即（Immediate）傷患範例" loading="lazy" decoding="async"></button><figcaption>立即（Immediate）傷患範例<span>原簡報 p.8</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：延後（Delayed）傷患範例"><img src="images/ch03-p09-42dfaf.webp" width="411" height="298" alt="延後（Delayed）傷患範例" loading="lazy" decoding="async"></button><figcaption>延後（Delayed）傷患範例<span>原簡報 p.9</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：輕傷（Minimal）傷患範例"><img src="images/ch03-p10-705ed0.webp" width="534" height="240" alt="輕傷（Minimal）傷患範例" loading="lazy" decoding="async"></button><figcaption>輕傷（Minimal）傷患範例<span>原簡報 p.10</span></figcaption></figure></div></section><section class="sub" data-sid="ch03-8"><h3 id="ch03-8"><a class="anchor" href="#ch03-8" aria-label="連結到此小節">#</a><span class="h-zh">傷患分類與標示</span><span class="h-en">Sorting and Tagging Casualties</span></h3>
 <p><strong>整體分流：快速判定傷患的初始檢傷分類</strong>　<em class="en">Global Sorting: Quickly identify the initial triage category of casualties</em></p>
 <p>「聽得到我聲音、能走的人，到這邊來。其他人大聲喊出來、舉手。」</p>
 <p class="en-line"><em class="en">“If you can walk to the sound of my voice, go here. Everyone else yell out, raise your hand”.</em></p>
@@ -814,7 +834,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </section><section class="sub" data-sid="ch03-11"><h3 id="ch03-11"><a class="anchor" href="#ch03-11" aria-label="連結到此小節">#</a><span class="h-zh">傷患集結點</span><span class="h-en">Casualty Collection Point</span></h3>
 <p>（原簡報第 15–19 頁為傷患集結點配置圖片，無文字內容。）</p>
-</section><section class="sub" data-sid="ch03-12"><h3 id="ch03-12"><a class="anchor" href="#ch03-12" aria-label="連結到此小節">#</a><span class="h-zh">檢傷分類的視覺標記</span><span class="h-en">Visual Markers for Triage Category</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：傷患集結點配置：直線型"><img src="images/ch03-p15-f0fc57.webp" width="1067" height="504" alt="傷患集結點配置：直線型" loading="lazy" decoding="async"></button><figcaption>傷患集結點配置：直線型<span>原簡報 p.15</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：傷患集結點配置：圓形"><img src="images/ch03-p16-5a8231.webp" width="1026" height="592" alt="傷患集結點配置：圓形" loading="lazy" decoding="async"></button><figcaption>傷患集結點配置：圓形<span>原簡報 p.16</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：傷患集結點配置：三角形"><img src="images/ch03-p17-0117e3.webp" width="1038" height="556" alt="傷患集結點配置：三角形" loading="lazy" decoding="async"></button><figcaption>傷患集結點配置：三角形<span>原簡報 p.17</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：傷患集結點配置：建築物內（房間）"><img src="images/ch03-p18-3c1bcb.webp" width="1024" height="525" alt="傷患集結點配置：建築物內（房間）" loading="lazy" decoding="async"></button><figcaption>傷患集結點配置：建築物內（房間）<span>原簡報 p.18</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：傷患集結點配置：建築物內（開放空間）"><img src="images/ch03-p19-8e3921.webp" width="1010" height="606" alt="傷患集結點配置：建築物內（開放空間）" loading="lazy" decoding="async"></button><figcaption>傷患集結點配置：建築物內（開放空間）<span>原簡報 p.19</span></figcaption></figure></div></section><section class="sub" data-sid="ch03-12"><h3 id="ch03-12"><a class="anchor" href="#ch03-12" aria-label="連結到此小節">#</a><span class="h-zh">檢傷分類的視覺標記</span><span class="h-en">Visual Markers for Triage Category</span></h3>
 <p>標記旗或螢光棒（夜間以螢光棒最佳）　<em class="en">Marker flags or chemlights (*Chemlights best at night)</em></p>
 <ul>
 <li>立即：紅旗或紅色螢光棒　<em class="en">Immediate: Red flag or chemlight</em></li>
@@ -822,7 +842,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>輕傷：綠旗或綠色螢光棒　<em class="en">Minimal: Green flag or chemlight</em></li>
 <li>期待：黑旗或藍色螢光棒　<em class="en">Expectant: Black flag or Blue chemlight</em></li>
 </ul>
-</section><section class="sub" data-sid="ch03-13"><h3 id="ch03-13"><a class="anchor" href="#ch03-13" aria-label="連結到此小節">#</a><span class="h-zh">MCI 資源盤點</span><span class="h-en">Inventory of Resources for MCI</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：夜間以螢光棒標記"><img src="images/ch03-p20-eead79.webp" width="266" height="190" alt="夜間以螢光棒標記" loading="lazy" decoding="async"></button><figcaption>夜間以螢光棒標記<span>原簡報 p.20</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：日間以標記旗標記"><img src="images/ch03-p20-a2809c.webp" width="275" height="183" alt="日間以標記旗標記" loading="lazy" decoding="async"></button><figcaption>日間以標記旗標記<span>原簡報 p.20</span></figcaption></figure></div></section><section class="sub" data-sid="ch03-13"><h3 id="ch03-13"><a class="anchor" href="#ch03-13" aria-label="連結到此小節">#</a><span class="h-zh">MCI 資源盤點</span><span class="h-en">Inventory of Resources for MCI</span></h3>
 <p>有效的管理始於盤點所有資源——對資源也要檢傷。<em class="en">Effective management begins with an inventory of all resources – triage your resources</em></p>
 <ul>
 <li>人員（醫療與非醫療）　<em class="en">Personnel (medical &amp; non-medical)</em></li>
@@ -880,7 +900,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </section><section class="sub" data-sid="ch03-16"><h3 id="ch03-16"><a class="anchor" href="#ch03-16" aria-label="連結到此小節">#</a><span class="h-zh">遠距醫療</span><span class="h-en">Telemedicine</span></h3>
 <p>（原簡報此頁為圖片。）</p>
-</section><section class="sub" data-sid="ch03-17"><h3 id="ch03-17"><a class="anchor" href="#ch03-17" aria-label="連結到此小節">#</a><span class="h-zh">固定醫療設施內的 MCI</span><span class="h-en">MCI in Fixed Medical Facility</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：遠距醫療諮詢範本"><img src="images/ch03-p24-77f507.webp" width="1352" height="1270" alt="遠距醫療諮詢範本" loading="lazy" decoding="async"></button><figcaption>遠距醫療諮詢範本<span>原簡報 p.24</span></figcaption></figure></div></section><section class="sub" data-sid="ch03-17"><h3 id="ch03-17"><a class="anchor" href="#ch03-17" aria-label="連結到此小節">#</a><span class="h-zh">固定醫療設施內的 MCI</span><span class="h-en">MCI in Fixed Medical Facility</span></h3>
 <p><strong>挑戰　Challenges</strong>：病患量、高照護標準、設施並非為 MCI 設計、人員召回</p>
 <p class="en-line"><em class="en">Patient volume, High standard of care, Facilities not designed for MCI, Staff recall</em></p>
 <p><strong>可提供的關鍵資源　Provides Essential Resources</strong>：損害控制手術、進階影像、加護照護、醫療後勤支援、額外醫療人員</p>
@@ -1357,7 +1377,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <header class="chead"><span class="cnum">06</span><div><h2>致命菱形</h2><p class="cen">Lethal Diamond</p></div></header>
 <details class="mini" open><summary>本章小節（8）</summary><ol><li><a href="#ch06-1">酸中毒</a></li><li><a href="#ch06-2">創傷中的酸中毒</a></li><li><a href="#ch06-3">酸中毒的後果</a></li><li><a href="#ch06-4">低體溫：分級方式很重要</a></li><li><a href="#ch06-5">低體溫的原因</a></li><li><a href="#ch06-6">低體溫的後果</a></li><li><a href="#ch06-7">凝血病變</a></li><li><a href="#ch06-8">低血鈣</a></li></ol></details>
 <div class="lead"><p><span class="tnote">譯註：致命菱形指酸中毒、低體溫、凝血病變、低血鈣四者。</span></p>
-</div><section class="sub" data-sid="ch06-1"><h3 id="ch06-1"><a class="anchor" href="#ch06-1" aria-label="連結到此小節">#</a><span class="h-zh">酸中毒</span><span class="h-en">Acidosis</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：致命菱形"><img src="images/ch06-p01-9b0003.webp" width="503" height="675" alt="致命菱形" loading="lazy" decoding="async"></button><figcaption>致命菱形<span>原簡報 p.1</span></figcaption></figure></div></div><section class="sub" data-sid="ch06-1"><h3 id="ch06-1"><a class="anchor" href="#ch06-1" aria-label="連結到此小節">#</a><span class="h-zh">酸中毒</span><span class="h-en">Acidosis</span></h3>
 <ul>
 <li>無氧代謝的副產物（乳酸）<ul>
 <li class="en-line"><em class="en">By product of anaerobic metabolism (lactic Acid)</em></li>
@@ -1510,7 +1530,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <p><strong>低血鈣的原因　Causes of Hypocalcemia</strong>：失血、輸血、大範圍組織損傷</p>
 <p class="en-line"><em class="en">Blood loss, Blood transfusion, Massive tissue damage</em></p>
 <p><strong>低血鈣的後果　Consequences of Hypocalcemia</strong>：凝血功能受損、肌肉功能異常、心臟功能受損、血管張力下降</p>
-<p class="en-line"><em class="en">Impaired coagulation, Muscle dysfunction, Cardiac impairment, Decrease vascular tone</em></p></section>
+<p class="en-line"><em class="en">Impaired coagulation, Muscle dysfunction, Cardiac impairment, Decrease vascular tone</em></p><div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：致命菱形：鈣的角色"><img src="images/ch06-p15-0b4a62.webp" width="1400" height="788" alt="致命菱形：鈣的角色" loading="lazy" decoding="async"></button><figcaption>致命菱形：鈣的角色<span>原簡報 p.15</span></figcaption></figure></div></section>
 <nav class="pn" aria-label="前後章"><a class="prev" href="#ch05"><small>上一章</small>05　PCC 期間的持續作業考量</a><a class="next" href="#ch07"><small>下一章</small>07　PCC 中的休克處置</a></nav>
 </article>
 <article class="chapter" id="ch07" data-title="PCC 中的休克處置">
@@ -1545,7 +1565,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch07-3"><h3 id="ch07-3"><a class="anchor" href="#ch07-3" aria-label="連結到此小節">#</a><span class="h-zh">休克類型</span><span class="h-en">Types of Shock</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：阻塞性"><img src="images/ch07-p03-9868c1.webp" width="145" height="130" alt="阻塞性" loading="lazy" decoding="async"></button><figcaption>阻塞性<span>原簡報 p.3</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：分布性"><img src="images/ch07-p03-ac3425.webp" width="113" height="123" alt="分布性" loading="lazy" decoding="async"></button><figcaption>分布性<span>原簡報 p.3</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：心因性"><img src="images/ch07-p03-8864fa.webp" width="130" height="143" alt="心因性" loading="lazy" decoding="async"></button><figcaption>心因性<span>原簡報 p.3</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：低血容性"><img src="images/ch07-p03-71acf9.webp" width="130" height="122" alt="低血容性" loading="lazy" decoding="async"></button><figcaption>低血容性<span>原簡報 p.3</span></figcaption></figure></div></section><section class="sub" data-sid="ch07-3"><h3 id="ch07-3"><a class="anchor" href="#ch07-3" aria-label="連結到此小節">#</a><span class="h-zh">休克類型</span><span class="h-en">Types of Shock</span></h3>
 <p><strong>低血容性　Hypovolemic</strong></p>
 <ul>
 <li>循環系統內體液不足<ul>
@@ -1597,7 +1617,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>過敏性：由嚴重過敏反應引起　<em class="en">Anaphylactic: caused by severe allergic reaction</em></li>
 <li>神經性：由脊髓損傷引起　<em class="en">Neurogenic: caused by spinal cord injury</em></li>
 </ul>
-</section><section class="sub" data-sid="ch07-4"><h3 id="ch07-4"><a class="anchor" href="#ch07-4" aria-label="連結到此小節">#</a><span class="h-zh">休克的徵象與症狀</span><span class="h-en">Signs and Symptoms of Shock</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：低血容性休克"><img src="images/ch07-p04-4c349b.webp" width="320" height="180" alt="低血容性休克" loading="lazy" decoding="async"></button><figcaption>低血容性休克<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：分布性休克：血管擴張使器官灌流下降"><img src="images/ch07-p07-d5edb1.webp" width="800" height="796" alt="分布性休克：血管擴張使器官灌流下降" loading="lazy" decoding="async"></button><figcaption>分布性休克：血管擴張使器官灌流下降<span>原簡報 p.7</span></figcaption></figure></div></section><section class="sub" data-sid="ch07-4"><h3 id="ch07-4"><a class="anchor" href="#ch07-4" aria-label="連結到此小節">#</a><span class="h-zh">休克的徵象與症狀</span><span class="h-en">Signs and Symptoms of Shock</span></h3>
 <ul>
 <li>心搏過速（HR &gt; 100）　<em class="en">Tachycardia (HR &gt; 100)</em></li>
 <li>呼吸急促（RR &gt; 20）　<em class="en">Tachypnea (RR &gt; 20)</em></li>
@@ -1632,7 +1652,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch07-6"><h3 id="ch07-6"><a class="anchor" href="#ch07-6" aria-label="連結到此小節">#</a><span class="h-zh">休克處置目標</span><span class="h-en">Goals of Shock Management</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：張力性氣胸針刺減壓"><img src="images/ch07-p09-912c22.webp" width="624" height="467" alt="張力性氣胸針刺減壓" loading="lazy" decoding="async"></button><figcaption>張力性氣胸針刺減壓<span>原簡報 p.9</span></figcaption></figure></div></section><section class="sub" data-sid="ch07-6"><h3 id="ch07-6"><a class="anchor" href="#ch07-6" aria-label="連結到此小節">#</a><span class="h-zh">休克處置目標</span><span class="h-en">Goals of Shock Management</span></h3>
 <ul>
 <li>出血性休克的終點：意識改善、摸得到橈動脈<ul>
 <li class="en-line"><em class="en">Hemorrhagic shock endpoints: improved mental status and a palpable radial pulse.</em></li>
@@ -1691,7 +1711,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch07-9"><h3 id="ch07-9"><a class="anchor" href="#ch07-9" aria-label="連結到此小節">#</a><span class="h-zh">傳明酸（TXA）</span><span class="h-en">Tranexamic Acid</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：致命三角"><img src="images/ch07-p12-5e075c.webp" width="315" height="246" alt="致命三角" loading="lazy" decoding="async"></button><figcaption>致命三角<span>原簡報 p.12</span></figcaption></figure></div></section><section class="sub" data-sid="ch07-9"><h3 id="ch07-9"><a class="anchor" href="#ch07-9" aria-label="連結到此小節">#</a><span class="h-zh">傳明酸（TXA）</span><span class="h-en">Tranexamic Acid</span></h3>
 <ul>
 <li>TXA 2 g 緩慢靜脈／骨內注射，越快越好，須在受傷後 3 小時內<ul>
 <li class="en-line"><em class="en">2 g TXA slow IV/IO as soon as possible, within 3 hours of injury.</em></li>
@@ -1736,7 +1756,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch07-11"><h3 id="ch07-11"><a class="anchor" href="#ch07-11" aria-label="連結到此小節">#</a><span class="h-zh">全血（續）</span><span class="h-en">Whole Blood Continued</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：成分血 1:1:1"><img src="images/ch07-p14-042f2f.webp" width="395" height="121" alt="成分血 1:1:1" loading="lazy" decoding="async"></button><figcaption>成分血 1:1:1<span>原簡報 p.14</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：冷藏全血"><img src="images/ch07-p14-75fe6d.webp" width="81" height="155" alt="冷藏全血" loading="lazy" decoding="async"></button><figcaption>冷藏全血<span>原簡報 p.14</span></figcaption></figure></div></section><section class="sub" data-sid="ch07-11"><h3 id="ch07-11"><a class="anchor" href="#ch07-11" aria-label="連結到此小節">#</a><span class="h-zh">全血（續）</span><span class="h-en">Whole Blood Continued</span></h3>
 <p>緊急全血優先順序（SOATP）　<em class="en">Emergency whole-blood priority (SOATP)</em></p>
 <ol>
 <li>低效價 O 型全血（LTOWB）　<em class="en">Low-titer O whole blood (LTOWB)</em></li>
@@ -1754,7 +1774,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch07-12"><h3 id="ch07-12"><a class="anchor" href="#ch07-12" aria-label="連結到此小節">#</a><span class="h-zh">輸血不良反應</span><span class="h-en">Adverse Reactions</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：ABO 血型"><img src="images/ch07-p15-2f0912.webp" width="351" height="108" alt="ABO 血型" loading="lazy" decoding="async"></button><figcaption>ABO 血型<span>原簡報 p.15</span></figcaption></figure></div></section><section class="sub" data-sid="ch07-12"><h3 id="ch07-12"><a class="anchor" href="#ch07-12" aria-label="連結到此小節">#</a><span class="h-zh">輸血不良反應</span><span class="h-en">Adverse Reactions</span></h3>
 <p><strong>急性溶血反應　Acute hemolytic reaction</strong>：疼痛、發燒、深色尿液或生命徵象不穩　<em class="en">Pain, fever, dark urine, or instability</em></p>
 <ul>
 <li>立即停止輸血<ul>
@@ -1820,7 +1840,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch07-14"><h3 id="ch07-14"><a class="anchor" href="#ch07-14" aria-label="連結到此小節">#</a><span class="h-zh">PCC 中的走動血庫考量</span><span class="h-en">Walking Blood Bank Considerations in PCC</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：葡萄糖酸鈣 10%"><img src="images/ch07-p17-b68893.webp" width="115" height="216" alt="葡萄糖酸鈣 10%" loading="lazy" decoding="async"></button><figcaption>葡萄糖酸鈣 10%<span>原簡報 p.17</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：氯化鈣 10%"><img src="images/ch07-p17-807962.webp" width="111" height="219" alt="氯化鈣 10%" loading="lazy" decoding="async"></button><figcaption>氯化鈣 10%<span>原簡報 p.17</span></figcaption></figure></div></section><section class="sub" data-sid="ch07-14"><h3 id="ch07-14"><a class="anchor" href="#ch07-14" aria-label="連結到此小節">#</a><span class="h-zh">PCC 中的走動血庫考量</span><span class="h-en">Walking Blood Bank Considerations in PCC</span></h3>
 <ul>
 <li>可行時，各單位成員應預先篩檢 ABO 血型，O 型者加做效價檢測（每 90–120 天複檢）<ul>
 <li class="en-line"><em class="en">When possible, members of each unit should be prescreened for ABO group and O group members should be titer tested (retest every 90-120 days)</em></li>
@@ -1904,7 +1924,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>骨盆：車禍／墜落／爆炸　<em class="en">Pelvis: MVA/Falls/Blast</em></li>
 <li>長骨：車禍／墜落／爆炸　<em class="en">Long bone: MVA/Falls/Blast</em></li>
 </ul>
-</section><section class="sub" data-sid="ch08-4"><h3 id="ch08-4"><a class="anchor" href="#ch08-4" aria-label="連結到此小節">#</a><span class="h-zh">胸腔內出血（血胸）</span><span class="h-en">Internal Hemorrhage in the Chest (Hemothorax)</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：骨盆外固定"><img src="images/ch08-p04-4f1a68.webp" width="1334" height="1208" alt="骨盆外固定" loading="lazy" decoding="async"></button><figcaption>骨盆外固定<span>原簡報 p.4</span></figcaption></figure></div></section><section class="sub" data-sid="ch08-4"><h3 id="ch08-4"><a class="anchor" href="#ch08-4" aria-label="連結到此小節">#</a><span class="h-zh">胸腔內出血（血胸）</span><span class="h-en">Internal Hemorrhage in the Chest (Hemothorax)</span></h3>
 <p><strong>徵象與症狀　Signs &amp; Symptoms</strong>：呼吸急促、胸痛、呼吸音減弱／消失、心搏過速與低血壓、氣管偏移（張力性血胸）、E-FAST 陽性</p>
 <p class="en-line"><em class="en">Shortness of breath, Chest pain, Decreased/absent breath sounds, Tachycardia, hypotension, Tracheal deviation (tension hemothorax), Positive E-FAST</em></p>
 <p><strong>治療　Treatment</strong></p>
@@ -1926,7 +1946,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch08-5"><h3 id="ch08-5"><a class="anchor" href="#ch08-5" aria-label="連結到此小節">#</a><span class="h-zh">骨盆內出血</span><span class="h-en">Internal Hemorrhage in the Pelvis</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：胸管引流"><img src="images/ch08-p05-eafc14.webp" width="978" height="596" alt="胸管引流" loading="lazy" decoding="async"></button><figcaption>胸管引流<span>原簡報 p.5</span></figcaption></figure></div></section><section class="sub" data-sid="ch08-5"><h3 id="ch08-5"><a class="anchor" href="#ch08-5" aria-label="連結到此小節">#</a><span class="h-zh">骨盆內出血</span><span class="h-en">Internal Hemorrhage in the Pelvis</span></h3>
 <p>多為靜脈性出血，但也可能是動脈性。<em class="en">Often venous bleeding, but can be arterial</em></p>
 <p><strong>徵象與症狀　Signs &amp; Symptoms</strong>：骨盆不穩、雙下肢長度不等、會陰部瘀青、陰囊／陰唇腫脹、直腸出血、心搏過速／低血壓</p>
 <p class="en-line"><em class="en">Pelvic instability, Leg-length discrepancy, Perineal bruising, Scrotal/labial swelling, Rectal bleeding, Tachycardia/Hypotension</em></p>
@@ -1949,7 +1969,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch08-6"><h3 id="ch08-6"><a class="anchor" href="#ch08-6" aria-label="連結到此小節">#</a><span class="h-zh">腹腔內出血</span><span class="h-en">Internal Hemorrhage in the Abdomen</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：骨盆血管解剖"><img src="images/ch08-p06-acaab2.webp" width="766" height="700" alt="骨盆血管解剖" loading="lazy" decoding="async"></button><figcaption>骨盆血管解剖<span>原簡報 p.6</span></figcaption></figure></div></section><section class="sub" data-sid="ch08-6"><h3 id="ch08-6"><a class="anchor" href="#ch08-6" aria-label="連結到此小節">#</a><span class="h-zh">腹腔內出血</span><span class="h-en">Internal Hemorrhage in the Abdomen</span></h3>
 <p>腹部內出血發生在兩個空間：<em class="en">Internal hemorrhage in the abdomen occurs in two spaces:</em></p>
 <ul>
 <li>腹膜內：實質器官，最常見（脾臟或肝臟）<ul>
@@ -1979,7 +1999,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <p class="en-line"><em class="en">Obvious deformity, swelling, or bruising; Shortened, rotated limb; Absent or weak distal pulses</em></p>
 <p><strong>治療　Treatment</strong>：骨折固定、直接加壓敷料、骨折復位、監測腔室症候群</p>
 <p class="en-line"><em class="en">Fracture Stabilization, Direct pressure dressing, Reduction of fracture, Monitor for compartment syndrome</em></p>
-</section><section class="sub" data-sid="ch08-8"><h3 id="ch08-8"><a class="anchor" href="#ch08-8" aria-label="連結到此小節">#</a><span class="h-zh">辨識內出血</span><span class="h-en">Recognition of Internal Hemorrhage</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：股骨骨折 X 光"><img src="images/ch08-p08-8577d4.webp" width="474" height="536" alt="股骨骨折 X 光" loading="lazy" decoding="async"></button><figcaption>股骨骨折 X 光<span>原簡報 p.8</span></figcaption></figure></div></section><section class="sub" data-sid="ch08-8"><h3 id="ch08-8"><a class="anchor" href="#ch08-8" aria-label="連結到此小節">#</a><span class="h-zh">辨識內出血</span><span class="h-en">Recognition of Internal Hemorrhage</span></h3>
 <p>這類傷勢不易辨識，需要時間才會出現明確的理學發現。<em class="en">These injuries are not easily identifiable and take time to develop clear physical findings</em></p>
 <ul>
 <li>依受傷機轉保持臨床懷疑　<em class="en">Clinical suspicion based on the mechanism of injury</em></li>
@@ -1996,7 +2016,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>E-FAST 陽性恥骨上：游離液體　<em class="en">Positive E-FAST Suprapubic: Free Fluid</em></li>
 <li>E-FAST 陽性：氣胸　<em class="en">Positive E-FAST Pneumothorax</em></li>
 </ul>
-</section><section class="sub" data-sid="ch08-10"><h3 id="ch08-10"><a class="anchor" href="#ch08-10" aria-label="連結到此小節">#</a><span class="h-zh">eFAST 的限制</span><span class="h-en">eFAST limitations</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：E-FAST 掃描位置"><img src="images/ch08-p10-d1493a.webp" width="1342" height="688" alt="E-FAST 掃描位置" loading="lazy" decoding="async"></button><figcaption>E-FAST 掃描位置<span>原簡報 p.10</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：E-FAST 掃描位置（續）"><img src="images/ch08-p11-911d0f.webp" width="1036" height="396" alt="E-FAST 掃描位置（續）" loading="lazy" decoding="async"></button><figcaption>E-FAST 掃描位置（續）<span>原簡報 p.11</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：E-FAST 陽性：心包填塞"><img src="images/ch08-p12-592c7a.webp" width="666" height="530" alt="E-FAST 陽性：心包填塞" loading="lazy" decoding="async"></button><figcaption>E-FAST 陽性：心包填塞<span>原簡報 p.12</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：E-FAST 陽性右上腹：莫里森氏袋"><img src="images/ch08-p13-922cd6.webp" width="1062" height="618" alt="E-FAST 陽性右上腹：莫里森氏袋" loading="lazy" decoding="async"></button><figcaption>E-FAST 陽性右上腹：莫里森氏袋<span>原簡報 p.13</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：E-FAST 陽性左上腹：脾腎隙"><img src="images/ch08-p14-54703e.webp" width="824" height="500" alt="E-FAST 陽性左上腹：脾腎隙" loading="lazy" decoding="async"></button><figcaption>E-FAST 陽性左上腹：脾腎隙<span>原簡報 p.14</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：E-FAST 陽性恥骨上：游離液體"><img src="images/ch08-p15-44805e.webp" width="990" height="694" alt="E-FAST 陽性恥骨上：游離液體" loading="lazy" decoding="async"></button><figcaption>E-FAST 陽性恥骨上：游離液體<span>原簡報 p.15</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：E-FAST 陽性：氣胸（M 模式）"><img src="images/ch08-p16-3e7983.webp" width="1176" height="836" alt="E-FAST 陽性：氣胸（M 模式）" loading="lazy" decoding="async"></button><figcaption>E-FAST 陽性：氣胸（M 模式）<span>原簡報 p.16</span></figcaption></figure></div></section><section class="sub" data-sid="ch08-10"><h3 id="ch08-10"><a class="anchor" href="#ch08-10" aria-label="連結到此小節">#</a><span class="h-zh">eFAST 的限制</span><span class="h-en">eFAST limitations</span></h3>
 <ul>
 <li>eFAST 陰性不能排除內出血<ul>
 <li class="en-line"><em class="en">A negative eFAST does not exclude internal hemorrhage.</em></li>
@@ -2071,7 +2091,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch09-4"><h3 id="ch09-4"><a class="anchor" href="#ch09-4" aria-label="連結到此小節">#</a><span class="h-zh">低體溫處置：較佳配置</span><span class="h-en">Better Hypothermia Management</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：低體溫預防套件（HPMK）"><img src="images/ch09-p04-31138e.webp" width="222" height="259" alt="低體溫預防套件（HPMK）" loading="lazy" decoding="async"></button><figcaption>低體溫預防套件（HPMK）<span>原簡報 p.4</span></figcaption></figure></div></section><section class="sub" data-sid="ch09-4"><h3 id="ch09-4"><a class="anchor" href="#ch09-4" aria-label="連結到此小節">#</a><span class="h-zh">低體溫處置：較佳配置</span><span class="h-en">Better Hypothermia Management</span></h3>
 <ul>
 <li><strong>系統升級</strong>：將傷患移入良好保溫系統：睡袋、防水氣層、熱源<ul>
 <li class="en-line"><em class="en">System Upgrade: Transition casualty to well-insulated system: sleeping bag, vapor barrier, heat source</em></li>
@@ -2094,7 +2114,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch09-5"><h3 id="ch09-5"><a class="anchor" href="#ch09-5" aria-label="連結到此小節">#</a><span class="h-zh">低體溫處置：最佳配置</span><span class="h-en">Best Hypothermia Management</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：保溫包裹方式"><img src="images/ch09-p05-652ae1.webp" width="335" height="198" alt="保溫包裹方式" loading="lazy" decoding="async"></button><figcaption>保溫包裹方式<span>原簡報 p.5</span></figcaption></figure></div></section><section class="sub" data-sid="ch09-5"><h3 id="ch09-5"><a class="anchor" href="#ch09-5" aria-label="連結到此小節">#</a><span class="h-zh">低體溫處置：最佳配置</span><span class="h-en">Best Hypothermia Management</span></h3>
 <ul>
 <li><strong>系統升級</strong>：將傷患移入有持續熱源的良好保溫系統<ul>
 <li class="en-line"><em class="en">System Upgrade: Transition casualty to well-insulated system with continuous heat source</em></li>
@@ -2109,7 +2129,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch09-6"><h3 id="ch09-6"><a class="anchor" href="#ch09-6" aria-label="連結到此小節">#</a><span class="h-zh">PCC 中的體溫過高</span><span class="h-en">Hyperthermia in Prolonged Casualty Care</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：Quantum 血液與輸液加溫系統"><img src="images/ch09-p06-2fcd9e.webp" width="618" height="615" alt="Quantum 血液與輸液加溫系統" loading="lazy" decoding="async"></button><figcaption>Quantum 血液與輸液加溫系統<span>原簡報 p.6</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：Bair Hugger 熱風保溫毯"><img src="images/ch09-p06-ec6331.webp" width="518" height="296" alt="Bair Hugger 熱風保溫毯" loading="lazy" decoding="async"></button><figcaption>Bair Hugger 熱風保溫毯<span>原簡報 p.6</span></figcaption></figure></div></section><section class="sub" data-sid="ch09-6"><h3 id="ch09-6"><a class="anchor" href="#ch09-6" aria-label="連結到此小節">#</a><span class="h-zh">PCC 中的體溫過高</span><span class="h-en">Hyperthermia in Prolonged Casualty Care</span></h3>
 <ul>
 <li><strong>發燒</strong>：下視丘設定點改變造成的體溫上升，通常由感染引起。可用退燒藥<ul>
 <li class="en-line"><em class="en">Fever: Elevated temperature due to hypothalamic set-point change, typically caused by infection. Antipyretics indicated</em></li>
@@ -2196,7 +2216,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>懷疑頸椎損傷（改用推顎法）　<em class="en">Suspected cervical spine injury (perform jaw thrust)</em></li>
 <li>可能使阻塞惡化的嚴重顏面創傷　<em class="en">Massive facial trauma that might worsen obstruction</em></li>
 </ul>
-</section><section class="sub" data-sid="ch10-4"><h3 id="ch10-4"><a class="anchor" href="#ch10-4" aria-label="連結到此小節">#</a><span class="h-zh">甦醒球（BVM）</span><span class="h-en">Bag Valve Mask</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：壓額抬下巴法與推顎法"><img src="images/ch10-p04-98e39e.webp" width="700" height="910" alt="壓額抬下巴法與推顎法" loading="lazy" decoding="async"></button><figcaption>壓額抬下巴法與推顎法<span>原簡報 p.4</span></figcaption></figure></div></section><section class="sub" data-sid="ch10-4"><h3 id="ch10-4"><a class="anchor" href="#ch10-4" aria-label="連結到此小節">#</a><span class="h-zh">甦醒球（BVM）</span><span class="h-en">Bag Valve Mask</span></h3>
 <p><strong>適應症　Indications</strong></p>
 <ul>
 <li>尚無進階呼吸道的呼吸衰竭或停止　<em class="en">Respiratory failure or arrest without advanced airway</em></li>
@@ -2212,7 +2232,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>胃部充氣　<em class="en">Gastric insufflation</em></li>
 <li>必要通氣時設法減少　<em class="en">Mitigate during required ventilation</em></li>
 </ul>
-</section><section class="sub" data-sid="ch10-5"><h3 id="ch10-5"><a class="anchor" href="#ch10-5" aria-label="連結到此小節">#</a><span class="h-zh">外科環甲軟骨切開術</span><span class="h-en">Surgical Cricothyroidotomy</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：甦醒球面罩密合手法"><img src="images/ch10-p05-d26d24.webp" width="1190" height="346" alt="甦醒球面罩密合手法" loading="lazy" decoding="async"></button><figcaption>甦醒球面罩密合手法<span>原簡報 p.5</span></figcaption></figure></div></section><section class="sub" data-sid="ch10-5"><h3 id="ch10-5"><a class="anchor" href="#ch10-5" aria-label="連結到此小節">#</a><span class="h-zh">外科環甲軟骨切開術</span><span class="h-en">Surgical Cricothyroidotomy</span></h3>
 <p><strong>適應症　Indications</strong>：燒傷、腫脹、異物造成的嚴重上呼吸道阻塞　<em class="en">Severe upper airway obstructions due to burns, swelling, foreign body</em></p>
 <p><strong>技術困難　Technical difficulty</strong></p>
 <ul>
@@ -2224,7 +2244,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>需持續照護與維護　<em class="en">Requires ongoing care and maintenance</em></li>
 <li>可能耗費大量資源（抽吸、止痛）　<em class="en">Can be resource intensive (suction, pain control)</em></li>
 </ul>
-</section><section class="sub" data-sid="ch10-6"><h3 id="ch10-6"><a class="anchor" href="#ch10-6" aria-label="連結到此小節">#</a><span class="h-zh">外科環甲軟骨切開術（續）</span><span class="h-en">Surgical Cricothyroidotomy cont.</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：外科環甲軟骨切開步驟"><img src="images/ch10-p06-064d66.webp" width="1400" height="209" alt="外科環甲軟骨切開步驟" loading="lazy" decoding="async"></button><figcaption>外科環甲軟骨切開步驟<span>原簡報 p.6</span></figcaption></figure></div></section><section class="sub" data-sid="ch10-6"><h3 id="ch10-6"><a class="anchor" href="#ch10-6" aria-label="連結到此小節">#</a><span class="h-zh">外科環甲軟骨切開術（續）</span><span class="h-en">Surgical Cricothyroidotomy cont.</span></h3>
 <ul>
 <li>對清醒、半清醒或對疼痛刺激有反應的病患，切開前考慮使用 lidocaine<ul>
 <li class="en-line"><em class="en">Consider using lidocaine prior to surgical cricothyroidotomy in conscious or semi conscious patients, or patients with a response to painful stimuli</em></li>
@@ -2247,7 +2267,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch10-7"><h3 id="ch10-7"><a class="anchor" href="#ch10-7" aria-label="連結到此小節">#</a><span class="h-zh">氣管內插管</span><span class="h-en">Endotracheal Intubation</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：Bougie 輔助環甲軟骨切開"><img src="images/ch10-p07-e6aeeb.webp" width="1136" height="562" alt="Bougie 輔助環甲軟骨切開" loading="lazy" decoding="async"></button><figcaption>Bougie 輔助環甲軟骨切開<span>原簡報 p.7</span></figcaption></figure></div></section><section class="sub" data-sid="ch10-7"><h3 id="ch10-7"><a class="anchor" href="#ch10-7" aria-label="連結到此小節">#</a><span class="h-zh">氣管內插管</span><span class="h-en">Endotracheal Intubation</span></h3>
 <p><strong>適應症　Indications</strong></p>
 <ul>
 <li>以呼吸道操作、聲門外呼吸道、鼻咽呼吸道處置失敗<ul>
@@ -2266,7 +2286,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>題顏面部損傷　<em class="en">Maxillofacial injuries</em></li>
 <li>難以辨識誤插食道　<em class="en">Difficulties recognizing esophageal intubation</em></li>
 </ul>
-</section><section class="sub" data-sid="ch10-8"><h3 id="ch10-8"><a class="anchor" href="#ch10-8" aria-label="連結到此小節">#</a><span class="h-zh">呼吸道控制的限制</span><span class="h-en">Limitations in Airway Control</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：氣管內插管"><img src="images/ch10-p08-d75494.webp" width="606" height="512" alt="氣管內插管" loading="lazy" decoding="async"></button><figcaption>氣管內插管<span>原簡報 p.8</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：插管器材"><img src="images/ch10-p08-3650c0.webp" width="574" height="750" alt="插管器材" loading="lazy" decoding="async"></button><figcaption>插管器材<span>原簡報 p.8</span></figcaption></figure></div></section><section class="sub" data-sid="ch10-8"><h3 id="ch10-8"><a class="anchor" href="#ch10-8" aria-label="連結到此小節">#</a><span class="h-zh">呼吸道控制的限制</span><span class="h-en">Limitations in Airway Control</span></h3>
 <ul>
 <li><strong>環境限制</strong>：進階呼吸道會使吸入氣體失去自然加溫加濕<ul>
 <li class="en-line"><em class="en">Environmental limitations: Advanced airways remove natural ability to heat and humidify respirations</em></li>
@@ -2397,7 +2417,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch11-3"><h3 id="ch11-3"><a class="anchor" href="#ch11-3" aria-label="連結到此小節">#</a><span class="h-zh">手指開胸術與胸管：操作步驟</span><span class="h-en">Procedure</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：手指開胸術步驟"><img src="images/ch11-p03-f64216.webp" width="648" height="388" alt="手指開胸術步驟" loading="lazy" decoding="async"></button><figcaption>手指開胸術步驟<span>原簡報 p.3</span></figcaption></figure></div></section><section class="sub" data-sid="ch11-3"><h3 id="ch11-3"><a class="anchor" href="#ch11-3" aria-label="連結到此小節">#</a><span class="h-zh">手指開胸術與胸管：操作步驟</span><span class="h-en">Procedure</span></h3>
 <ol>
 <li>定位患側第 4 或第 5 肋間，腰中線前方
    - <em class="en">Locate 4th or 5th intercostal space, anterior to mid-axillary line on the affected side</em></li>
@@ -2430,7 +2450,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
    - <em class="en">Apply an occlusive dressing around the tube and incision</em></li>
 </ol>
 <p>＊若尚未給予抗生素，必須給予。<em class="en">*Antibiotics required if they have not already been given*</em>（濕地／叢林傷口抗生素<a href="#appA">見附錄 A</a>。）</p>
-</section><section class="sub" data-sid="ch11-4"><h3 id="ch11-4"><a class="anchor" href="#ch11-4" aria-label="連結到此小節">#</a><span class="h-zh">呼吸器管理與呼吸生理</span><span class="h-en">Ventilator management and respiratory physiology</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：胸管置放"><img src="images/ch11-p05-d436d8.webp" width="1080" height="810" alt="胸管置放" loading="lazy" decoding="async"></button><figcaption>胸管置放<span>原簡報 p.5</span></figcaption></figure></div></section><section class="sub" data-sid="ch11-4"><h3 id="ch11-4"><a class="anchor" href="#ch11-4" aria-label="連結到此小節">#</a><span class="h-zh">呼吸器管理與呼吸生理</span><span class="h-en">Ventilator management and respiratory physiology</span></h3>
 <p>「肺總量」（Total Lung Capacity）一頁為圖片。</p>
 <p><strong>負壓與正壓　Negative and Positive Pressure</strong></p>
 <ul>
@@ -2450,7 +2470,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch11-5"><h3 id="ch11-5"><a class="anchor" href="#ch11-5" aria-label="連結到此小節">#</a><span class="h-zh">呼吸驅力</span><span class="h-en">Respiratory Drive</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：野戰環境中的呼吸器使用"><img src="images/ch11-p06-ab6001.webp" width="640" height="375" alt="野戰環境中的呼吸器使用" loading="lazy" decoding="async"></button><figcaption>野戰環境中的呼吸器使用<span>原簡報 p.6</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：肺容積與肺容量"><img src="images/ch11-p07-a194ca.webp" width="886" height="505" alt="肺容積與肺容量" loading="lazy" decoding="async"></button><figcaption>肺容積與肺容量<span>原簡報 p.7</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：吸氣時胸腔擴張"><img src="images/ch11-p08-ff9e39.webp" width="427" height="621" alt="吸氣時胸腔擴張" loading="lazy" decoding="async"></button><figcaption>吸氣時胸腔擴張<span>原簡報 p.8</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：攜帶式呼吸器（SAVe II+）"><img src="images/ch11-p09-b80719.webp" width="772" height="574" alt="攜帶式呼吸器（SAVe II+）" loading="lazy" decoding="async"></button><figcaption>攜帶式呼吸器（SAVe II+）<span>原簡報 p.9</span></figcaption></figure></div></section><section class="sub" data-sid="ch11-5"><h3 id="ch11-5"><a class="anchor" href="#ch11-5" aria-label="連結到此小節">#</a><span class="h-zh">呼吸驅力</span><span class="h-en">Respiratory Drive</span></h3>
 <ul>
 <li>延腦控制基本呼吸節律　<em class="en">Medulla controls basic rhythm of breathing</em></li>
 <li>橋腦微調呼吸模式　<em class="en">The Pons fine tunes breathing patterns</em></li>
@@ -2885,7 +2905,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li><strong>EtCO2 上升</strong>：波形振幅與寬度增加　<em class="en">Increasing EtCO2: Waveform increases in amplitude and width</em></li>
 <li><strong>EtCO2 下降</strong>：波形振幅與寬度減少　<em class="en">Decreasing EtCO2: Waveform decreases in amplitude and width</em></li>
 </ul>
-</section><section class="sub" data-sid="ch11-23"><h3 id="ch11-23"><a class="anchor" href="#ch11-23" aria-label="連結到此小節">#</a><span class="h-zh">EtCO2 目標依照護階段與生理狀態而定</span><span class="h-en">EtCO2 targets depend on phase and physiology</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：EtCO2 波形判讀總表"><img src="images/ch11-p38-6ec179.webp" width="916" height="952" alt="EtCO2 波形判讀總表" loading="lazy" decoding="async"></button><figcaption>EtCO2 波形判讀總表<span>原簡報 p.38</span></figcaption></figure></div></section><section class="sub" data-sid="ch11-23"><h3 id="ch11-23"><a class="anchor" href="#ch11-23" aria-label="連結到此小節">#</a><span class="h-zh">EtCO2 目標依照護階段與生理狀態而定</span><span class="h-en">EtCO2 targets depend on phase and physiology</span></h3>
 <ul>
 <li>PCC 目標：EtCO2 30–40 mmHg，實測 PaCO2 35–45 mmHg（SOATP）<ul>
 <li class="en-line"><em class="en">PCC targets: EtCO2 30-40 mmHg and measured PaCO2 35-45 mmHg. (SOATP)</em></li>
@@ -2956,7 +2976,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch12-5"><h3 id="ch12-5"><a class="anchor" href="#ch12-5" aria-label="連結到此小節">#</a><span class="h-zh">正常 EtCO2 波形</span><span class="h-en">Normal EtCO2</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：Capnography 波形分期"><img src="images/ch12-p05-d5d94b.webp" width="1361" height="837" alt="Capnography 波形分期" loading="lazy" decoding="async"></button><figcaption>Capnography 波形分期<span>原簡報 p.5</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：Capnography 波形分期（續）"><img src="images/ch12-p06-cbdd58.webp" width="983" height="604" alt="Capnography 波形分期（續）" loading="lazy" decoding="async"></button><figcaption>Capnography 波形分期（續）<span>原簡報 p.6</span></figcaption></figure></div></section><section class="sub" data-sid="ch12-5"><h3 id="ch12-5"><a class="anchor" href="#ch12-5" aria-label="連結到此小節">#</a><span class="h-zh">正常 EtCO2 波形</span><span class="h-en">Normal EtCO2</span></h3>
 <ul>
 <li>A–B：基線　<em class="en">Baseline</em></li>
 <li>B–C：吐氣上升支　<em class="en">Expiratory Upstroke</em></li>
@@ -2964,7 +2984,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>D：潮氣末濃度　<em class="en">End tidal concentration</em></li>
 <li>D–E：吸氣　<em class="en">Inspiration</em></li>
 </ul>
-</section><section class="sub" data-sid="ch12-6"><h3 id="ch12-6"><a class="anchor" href="#ch12-6" aria-label="連結到此小節">#</a><span class="h-zh">異常波形</span><span class="h-en">Abnormal Waveforms</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：正常 EtCO2 波形"><img src="images/ch12-p09-c9a064.webp" width="408" height="126" alt="正常 EtCO2 波形" loading="lazy" decoding="async"></button><figcaption>正常 EtCO2 波形<span>原簡報 p.9</span></figcaption></figure></div></section><section class="sub" data-sid="ch12-6"><h3 id="ch12-6"><a class="anchor" href="#ch12-6" aria-label="連結到此小節">#</a><span class="h-zh">異常波形</span><span class="h-en">Abnormal Waveforms</span></h3>
 <p><strong>支氣管痙攣（鯊魚鰭）　Bronchospasm (Shark fin)</strong>：氣喘、COPD、肺氣腫；空氣困在肺內　<em class="en">Asthma, COPD, Emphysema; Air trapped in lungs</em></p>
 <p><strong>通氣不足　Hypoventilation</strong></p>
 <ul>
@@ -3005,7 +3025,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>氣囊漏氣或洩氣　<em class="en">Leaky or deflated endotracheal cuff</em></li>
 <li>插管失敗（未進入氣管）　<em class="en">Missed intubation</em></li>
 </ul>
-</section><section class="sub" data-sid="ch12-7"><h3 id="ch12-7"><a class="anchor" href="#ch12-7" aria-label="連結到此小節">#</a><span class="h-zh">EtCO2 判讀的限制</span><span class="h-en">EtCO2 interpretation limits</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：支氣管痙攣（鯊魚鰭）"><img src="images/ch12-p10-506e34.webp" width="412" height="127" alt="支氣管痙攣（鯊魚鰭）" loading="lazy" decoding="async"></button><figcaption>支氣管痙攣（鯊魚鰭）<span>原簡報 p.10</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：通氣不足"><img src="images/ch12-p11-e2c4a5.webp" width="409" height="127" alt="通氣不足" loading="lazy" decoding="async"></button><figcaption>通氣不足<span>原簡報 p.11</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：過度換氣"><img src="images/ch12-p12-7fe7da.webp" width="411" height="129" alt="過度換氣" loading="lazy" decoding="async"></button><figcaption>過度換氣<span>原簡報 p.12</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：重複吸入"><img src="images/ch12-p13-a434a3.webp" width="409" height="127" alt="重複吸入" loading="lazy" decoding="async"></button><figcaption>重複吸入<span>原簡報 p.13</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：箭毒裂痕"><img src="images/ch12-p14-25cb12.webp" width="412" height="126" alt="箭毒裂痕" loading="lazy" decoding="async"></button><figcaption>箭毒裂痕<span>原簡報 p.14</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：自發循環恢復（ROSC）"><img src="images/ch12-p15-4466e4.webp" width="412" height="130" alt="自發循環恢復（ROSC）" loading="lazy" decoding="async"></button><figcaption>自發循環恢復（ROSC）<span>原簡報 p.15</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：氣管內管脫出、脫開或扭折"><img src="images/ch12-p16-0ae164.webp" width="1180" height="274" alt="氣管內管脫出、脫開或扭折" loading="lazy" decoding="async"></button><figcaption>氣管內管脫出、脫開或扭折<span>原簡報 p.16</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：氣囊漏氣或洩氣"><img src="images/ch12-p17-7a8250.webp" width="634" height="187" alt="氣囊漏氣或洩氣" loading="lazy" decoding="async"></button><figcaption>氣囊漏氣或洩氣<span>原簡報 p.17</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：插管失敗"><img src="images/ch12-p18-410a26.webp" width="643" height="186" alt="插管失敗" loading="lazy" decoding="async"></button><figcaption>插管失敗<span>原簡報 p.18</span></figcaption></figure></div></section><section class="sub" data-sid="ch12-7"><h3 id="ch12-7"><a class="anchor" href="#ch12-7" aria-label="連結到此小節">#</a><span class="h-zh">EtCO2 判讀的限制</span><span class="h-en">EtCO2 interpretation limits</span></h3>
 <ul>
 <li>波形是診斷線索，不是唯一診斷<ul>
 <li class="en-line"><em class="en">A waveform is a diagnostic clue, not a unique diagnosis.</em></li>
@@ -3633,7 +3653,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch14-3"><h3 id="ch14-3"><a class="anchor" href="#ch14-3" aria-label="連結到此小節">#</a><span class="h-zh">體表面積評估</span><span class="h-en">Total Body Surface Area Assessment</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：胸壁焦痂切開"><img src="images/ch14-p04-33dbf9.webp" width="780" height="516" alt="胸壁焦痂切開" loading="lazy" decoding="async"></button><figcaption>胸壁焦痂切開<span>原簡報 p.4</span></figcaption></figure></div></section><section class="sub" data-sid="ch14-3"><h3 id="ch14-3"><a class="anchor" href="#ch14-3" aria-label="連結到此小節">#</a><span class="h-zh">體表面積評估</span><span class="h-en">Total Body Surface Area Assessment</span></h3>
 <ul>
 <li>以九法則快速估算<ul>
 <li class="en-line"><em class="en">Rule of Nines for rapid estimate</em></li>
@@ -3652,7 +3672,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch14-4"><h3 id="ch14-4"><a class="anchor" href="#ch14-4" aria-label="連結到此小節">#</a><span class="h-zh">輸液復甦</span><span class="h-en">Fluid Resuscitation</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：九法則估算 TBSA"><img src="images/ch14-p05-f22f67.webp" width="1400" height="919" alt="九法則估算 TBSA" loading="lazy" decoding="async"></button><figcaption>九法則估算 TBSA<span>原簡報 p.5</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：十法則補充：體重超過 80 kg 時，每多 10 kg 初始速率增加 100 mL/hr"><img src="images/ch14-p05-0ea52a.webp" width="744" height="154" alt="十法則補充：體重超過 80 kg 時，每多 10 kg 初始速率增加 100 mL/hr" loading="lazy" decoding="async"></button><figcaption>十法則補充：體重超過 80 kg 時，每多 10 kg 初始速率增加 100 mL/hr<span>原簡報 p.5</span></figcaption></figure></div></section><section class="sub" data-sid="ch14-4"><h3 id="ch14-4"><a class="anchor" href="#ch14-4" aria-label="連結到此小節">#</a><span class="h-zh">輸液復甦</span><span class="h-en">Fluid Resuscitation</span></h3>
 <ul>
 <li>先處理合併的出血性休克<ul>
 <li class="en-line"><em class="en">Treat associated hemorrhagic shock first.</em></li>
@@ -3774,7 +3794,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch14-7"><h3 id="ch14-7"><a class="anchor" href="#ch14-7" aria-label="連結到此小節">#</a><span class="h-zh">監測重點</span><span class="h-en">Monitoring Priorities</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：焦痂切開"><img src="images/ch14-p09-550f65.webp" width="520" height="384" alt="焦痂切開" loading="lazy" decoding="async"></button><figcaption>焦痂切開<span>原簡報 p.9</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：四肢焦痂切開切口位置（粗線為淺層靜脈或神經）"><img src="images/ch14-p10-39739d.webp" width="528" height="830" alt="四肢焦痂切開切口位置（粗線為淺層靜脈或神經）" loading="lazy" decoding="async"></button><figcaption>四肢焦痂切開切口位置（粗線為淺層靜脈或神經）<span>原簡報 p.10</span></figcaption></figure></div></section><section class="sub" data-sid="ch14-7"><h3 id="ch14-7"><a class="anchor" href="#ch14-7" aria-label="連結到此小節">#</a><span class="h-zh">監測重點</span><span class="h-en">Monitoring Priorities</span></h3>
 <ul>
 <li>持續監測 HR、SpO2、BP；置入進階呼吸道後監測 EtCO2<ul>
 <li class="en-line"><em class="en">Continuous HR, SpO₂, BP; ETCO₂ if advanced airway placed</em></li>
@@ -3933,7 +3953,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch15-4"><h3 id="ch15-4"><a class="anchor" href="#ch15-4" aria-label="連結到此小節">#</a><span class="h-zh">警示徵象（中至重度）</span><span class="h-en">Red Flags (moderate to severe)</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：格拉斯哥昏迷指數（GCS）"><img src="images/ch15-p08-0d4195.webp" width="910" height="225" alt="格拉斯哥昏迷指數（GCS）" loading="lazy" decoding="async"></button><figcaption>格拉斯哥昏迷指數（GCS）<span>原簡報 p.8</span></figcaption></figure></div></section><section class="sub" data-sid="ch15-4"><h3 id="ch15-4"><a class="anchor" href="#ch15-4" aria-label="連結到此小節">#</a><span class="h-zh">警示徵象（中至重度）</span><span class="h-en">Red Flags (moderate to severe)</span></h3>
 <ul>
 <li>目擊意識喪失　<em class="en">Witness Loss of Consciousness</em></li>
 <li>72 小時內兩次以上爆炸暴露　<em class="en">Two or more blast exposure within 72 hours</em></li>
@@ -4146,7 +4166,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>過緊的環狀敷料或石膏　<em class="en">Tight circumferential dressings or casts</em></li>
 </ul>
 <p><strong>PCC 的顧慮　PCC Concern</strong>：後送延誤時，可能在受傷數小時後才發展出來。<em class="en">Can evolve hours after initial injury when evacuation is delayed</em></p>
-</section><section class="sub" data-sid="ch16-2"><h3 id="ch16-2"><a class="anchor" href="#ch16-2" aria-label="連結到此小節">#</a><span class="h-zh">腔室症候群的 6P</span><span class="h-en">The 6 P's of Compartment Syndrome</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：小腿肌肉腔室橫切面"><img src="images/ch16-p02-5fa34c.webp" width="369" height="373" alt="小腿肌肉腔室橫切面" loading="lazy" decoding="async"></button><figcaption>小腿肌肉腔室橫切面<span>原簡報 p.2</span></figcaption></figure></div></section><section class="sub" data-sid="ch16-2"><h3 id="ch16-2"><a class="anchor" href="#ch16-2" aria-label="連結到此小節">#</a><span class="h-zh">腔室症候群的 6P</span><span class="h-en">The 6 P's of Compartment Syndrome</span></h3>
 <ul>
 <li><strong>疼痛 Pain</strong>：與傷勢不成比例（早期徵象）；被動伸展肌肉時疼痛<ul>
 <li class="en-line"><em class="en">Out of proportion to injury (early sign); Pain with passive stretch of muscles</em></li>
@@ -4192,7 +4212,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch16-4"><h3 id="ch16-4"><a class="anchor" href="#ch16-4" aria-label="連結到此小節">#</a><span class="h-zh">PCC 處置技巧</span><span class="h-en">Management Techniques in PCC</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：檢查遠端循環"><img src="images/ch16-p04-e6f19b.webp" width="258" height="116" alt="檢查遠端循環" loading="lazy" decoding="async"></button><figcaption>檢查遠端循環<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：評估患肢"><img src="images/ch16-p04-d07230.webp" width="232" height="184" alt="評估患肢" loading="lazy" decoding="async"></button><figcaption>評估患肢<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：檢查感覺與活動"><img src="images/ch16-p04-f60b14.webp" width="296" height="140" alt="檢查感覺與活動" loading="lazy" decoding="async"></button><figcaption>檢查感覺與活動<span>原簡報 p.4</span></figcaption></figure></div></section><section class="sub" data-sid="ch16-4"><h3 id="ch16-4"><a class="anchor" href="#ch16-4" aria-label="連結到此小節">#</a><span class="h-zh">PCC 處置技巧</span><span class="h-en">Management Techniques in PCC</span></h3>
 <p><strong>最低配置　Minimum</strong></p>
 <ul>
 <li>放鬆／調整夹板或繃帶　<em class="en">Loosen/adjust splint or bandages</em></li>
@@ -4225,7 +4245,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 <p><strong>關鍵：這不「只是疼痛」——這是腔室症候群，一個威脅肢體與生命、必須在現場及早辨識的併發症。</strong></p>
 <p class="en-line"><em class="en">Critical Point: This is not "just pain" — this is compartment syndrome, a limb- and life-threatening complication you must recognize early in the field.</em></p>
-</section><section class="sub" data-sid="ch16-6"><h3 id="ch16-6"><a class="anchor" href="#ch16-6" aria-label="連結到此小節">#</a><span class="h-zh">降低肢體損傷風險：何時轉換止血帶</span><span class="h-en">When to Convert Tourniquets</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：加壓繃帶"><img src="images/ch16-p06-cac2c2.webp" width="504" height="128" alt="加壓繃帶" loading="lazy" decoding="async"></button><figcaption>加壓繃帶<span>原簡報 p.6</span></figcaption></figure></div></section><section class="sub" data-sid="ch16-6"><h3 id="ch16-6"><a class="anchor" href="#ch16-6" aria-label="連結到此小節">#</a><span class="h-zh">降低肢體損傷風險：何時轉換止血帶</span><span class="h-en">When to Convert Tourniquets</span></h3>
 <ul>
 <li>無休克　<em class="en">No shock</em></li>
 <li>傷口可密切監測　<em class="en">Wound can be monitored closely</em></li>
@@ -4330,16 +4350,16 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch17-2"><h3 id="ch17-2"><a class="anchor" href="#ch17-2" aria-label="連結到此小節">#</a><span class="h-zh">醫學定義</span><span class="h-en">Medical Definition</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：車輛受困"><img src="images/ch17-p02-536b22.webp" width="523" height="358" alt="車輛受困" loading="lazy" decoding="async"></button><figcaption>車輛受困<span>原簡報 p.2</span></figcaption></figure></div></section><section class="sub" data-sid="ch17-2"><h3 id="ch17-2"><a class="anchor" href="#ch17-2" aria-label="連結到此小節">#</a><span class="h-zh">醫學定義</span><span class="h-en">Medical Definition</span></h3>
 <p>大範圍、長時間的壓砸造成嚴重肌肉與軟組織損傷，受損組織釋出鉀、酸與蛋白質，使病患發生循環與腎臟併發症的風險顯著升高。</p>
 <p class="en-line"><em class="en">Massive, prolonged crush injury resulting in profound muscle and soft tissue damage places the patient at significantly increased risk for developing circulatory and renal complications due to release of potassium, acid and protein from the injured tissue</em></p>
-</section><section class="sub" data-sid="ch17-3"><h3 id="ch17-3"><a class="anchor" href="#ch17-3" aria-label="連結到此小節">#</a><span class="h-zh">創傷情境中的壓砸原因</span><span class="h-en">Causes of Crush in Trauma Scenarios</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：壓砸傷"><img src="images/ch17-p03-e92b25.webp" width="1137" height="601" alt="壓砸傷" loading="lazy" decoding="async"></button><figcaption>壓砸傷<span>原簡報 p.3</span></figcaption></figure></div></section><section class="sub" data-sid="ch17-3"><h3 id="ch17-3"><a class="anchor" href="#ch17-3" aria-label="連結到此小節">#</a><span class="h-zh">創傷情境中的壓砸原因</span><span class="h-en">Causes of Crush in Trauma Scenarios</span></h3>
 <p>建物倒塌、地震、山崩、爆炸、工地意外、礦坑／壕溝崩塌、車輛受困</p>
 <p class="en-line"><em class="en">Building collapse, Earthquake, Landslide, Bombings, Construction accidents, Mine/Trench Collapse, Vehicle entrapment</em></p>
-</section><section class="sub" data-sid="ch17-4"><h3 id="ch17-4"><a class="anchor" href="#ch17-4" aria-label="連結到此小節">#</a><span class="h-zh">壓砸的病理生理</span><span class="h-en">Pathophysiology of Crush</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：建物倒塌救援"><img src="images/ch17-p04-87523b.webp" width="1320" height="1400" alt="建物倒塌救援" loading="lazy" decoding="async"></button><figcaption>建物倒塌救援<span>原簡報 p.4</span></figcaption></figure></div></section><section class="sub" data-sid="ch17-4"><h3 id="ch17-4"><a class="anchor" href="#ch17-4" aria-label="連結到此小節">#</a><span class="h-zh">壓砸的病理生理</span><span class="h-en">Pathophysiology of Crush</span></h3>
 <p>任何原因造成肌細胞膜（sarcolemma）受損，使鈣、鈉隨後水流入細胞，並從細胞釋出肌紅素、乳酸、肌酸激酶、鉀、尿酸與磷。</p>
 <p class="en-line"><em class="en">Damage to the sarcolemma (muscle membrane) from any cause. This damage allows an influx of calcium and sodium, followed by water, into the cells and a release of myoglobin, lactate, creatine kinase, potassium, uric acid, and phosphorus from the cells</em></p>
-</section><section class="sub" data-sid="ch17-5"><h3 id="ch17-5"><a class="anchor" href="#ch17-5" aria-label="連結到此小節">#</a><span class="h-zh">簡單來說</span><span class="h-en">Simple Terms</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：壓砸症候群的特徵"><img src="images/ch17-p05-be3ae7.webp" width="544" height="465" alt="壓砸症候群的特徵" loading="lazy" decoding="async"></button><figcaption>壓砸症候群的特徵<span>原簡報 p.5</span></figcaption></figure></div></section><section class="sub" data-sid="ch17-5"><h3 id="ch17-5"><a class="anchor" href="#ch17-5" aria-label="連結到此小節">#</a><span class="h-zh">簡單來說</span><span class="h-en">Simple Terms</span></h3>
 <ul>
 <li>重物壓在傷患身上，阻斷含氧血液灌流肢體，可能造成組織壞死<ul>
 <li class="en-line"><em class="en">Heavy object sits on patient, blocking the perfusion of oxygenated blood to the limb resulting in possible tissue death</em></li>
@@ -4404,7 +4424,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 <li>最可能惡化為心室性心律　<em class="en">Most likely to deteriorate in a ventricular rhythm</em></li>
 </ul>
 <p>（「高血鉀 12 導程心電圖」一頁為圖片。）</p>
-</section><section class="sub" data-sid="ch17-10"><h3 id="ch17-10"><a class="anchor" href="#ch17-10" aria-label="連結到此小節">#</a><span class="h-zh">壓砸的其他症狀</span><span class="h-en">Other symptoms of Crush</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：高血鉀 12 導程心電圖"><img src="images/ch17-p11-fc0b6b.webp" width="1200" height="628" alt="高血鉀 12 導程心電圖" loading="lazy" decoding="async"></button><figcaption>高血鉀 12 導程心電圖<span>原簡報 p.11</span></figcaption></figure></div></section><section class="sub" data-sid="ch17-10"><h3 id="ch17-10"><a class="anchor" href="#ch17-10" aria-label="連結到此小節">#</a><span class="h-zh">壓砸的其他症狀</span><span class="h-en">Other symptoms of Crush</span></h3>
 <ul>
 <li>組織腫脹　<em class="en">Tissue swelling</em></li>
 <li>可能腔室症候群（6P）：疼痛、感覺異常、蒼白、失溫；麻痺／無脈搏為晚期　<em class="en">Possible compartment syndrome (6 P’s): Pain, paresthesia, pallor, poikilothermia; paralysis/pulselessness are late.</em></li>
@@ -4611,7 +4631,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch18-5"><h3 id="ch18-5"><a class="anchor" href="#ch18-5" aria-label="連結到此小節">#</a><span class="h-zh">線鋸（Gigli saw）：救援上的限制</span><span class="h-en">Gigli saw: rescue limitations</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：Gigli 線鋸"><img src="images/ch18-p05-500a48.webp" width="911" height="915" alt="Gigli 線鋸" loading="lazy" decoding="async"></button><figcaption>Gigli 線鋸<span>原簡報 p.5</span></figcaption></figure></div></section><section class="sub" data-sid="ch18-5"><h3 id="ch18-5"><a class="anchor" href="#ch18-5" aria-label="連結到此小節">#</a><span class="h-zh">線鋸（Gigli saw）：救援上的限制</span><span class="h-en">Gigli saw: rescue limitations</span></h3>
 <ul>
 <li>先環狀切開軟組織再用 Gigli 線鋸，是一個救出範例<ul>
 <li class="en-line"><em class="en">Circular soft-tissue cutting followed by a Gigli saw is an extrication example.</em></li>
@@ -4626,7 +4646,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch18-6"><h3 id="ch18-6"><a class="anchor" href="#ch18-6" aria-label="連結到此小節">#</a><span class="h-zh">電鋸：未經驗證的救援方法</span><span class="h-en">Powered saw: unvalidated rescue method</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：Gigli 線鋸截肢示意"><img src="images/ch18-p06-5dfae8.webp" width="776" height="660" alt="Gigli 線鋸截肢示意" loading="lazy" decoding="async"></button><figcaption>Gigli 線鋸截肢示意<span>原簡報 p.6</span></figcaption></figure></div></section><section class="sub" data-sid="ch18-6"><h3 id="ch18-6"><a class="anchor" href="#ch18-6" aria-label="連結到此小節">#</a><span class="h-zh">電鋸：未經驗證的救援方法</span><span class="h-en">Powered saw: unvalidated rescue method</span></h3>
 <ul>
 <li>曾有人提議以大力膠帶加電鋸處理受困肢體<ul>
 <li class="en-line"><em class="en">Duct tape and a powered saw have been proposed for an entrapped limb.</em></li>
@@ -4645,7 +4665,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch18-7"><h3 id="ch18-7"><a class="anchor" href="#ch18-7" aria-label="連結到此小節">#</a><span class="h-zh">截肢後</span><span class="h-en">After amputation</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：電鋸"><img src="images/ch18-p07-33d993.webp" width="491" height="291" alt="電鋸" loading="lazy" decoding="async"></button><figcaption>電鋸<span>原簡報 p.7</span></figcaption></figure></div></section><section class="sub" data-sid="ch18-7"><h3 id="ch18-7"><a class="anchor" href="#ch18-7" aria-label="連結到此小節">#</a><span class="h-zh">截肢後</span><span class="h-en">After amputation</span></h3>
 <ul>
 <li>止血並重新評估復甦需求<ul>
 <li class="en-line"><em class="en">Control hemorrhage and reassess resuscitation needs.</em></li>
@@ -4718,7 +4738,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch19-4"><h3 id="ch19-4"><a class="anchor" href="#ch19-4" aria-label="連結到此小節">#</a><span class="h-zh">初期 TCCC 傷口抗生素</span><span class="h-en">Initial TCCC wound antibiotics</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：局部感染"><img src="images/ch19-p04-b989d7.webp" width="1098" height="428" alt="局部感染" loading="lazy" decoding="async"></button><figcaption>局部感染<span>原簡報 p.4</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：全身性感染"><img src="images/ch19-p04-09394f.webp" width="494" height="710" alt="全身性感染" loading="lazy" decoding="async"></button><figcaption>全身性感染<span>原簡報 p.4</span></figcaption></figure></div></section><section class="sub" data-sid="ch19-4"><h3 id="ch19-4"><a class="anchor" href="#ch19-4" aria-label="連結到此小節">#</a><span class="h-zh">初期 TCCC 傷口抗生素</span><span class="h-en">Initial TCCC wound antibiotics</span></h3>
 <ul>
 <li>現行 TCCC：開放性戰傷與侵入性處置應給予抗生素<ul>
 <li class="en-line"><em class="en">Current TCCC: give antibiotics for open combat wounds and invasive procedures.</em></li>
@@ -4764,7 +4784,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch19-6"><h3 id="ch19-6"><a class="anchor" href="#ch19-6" aria-label="連結到此小節">#</a><span class="h-zh">過敏反應與過敏性休克</span><span class="h-en">Allergic Reaction &amp; Anaphylaxis</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：膿瘍"><img src="images/ch19-p06-aba813.webp" width="466" height="295" alt="膿瘍" loading="lazy" decoding="async"></button><figcaption>膿瘍<span>原簡報 p.6</span></figcaption></figure></div></section><section class="sub" data-sid="ch19-6"><h3 id="ch19-6"><a class="anchor" href="#ch19-6" aria-label="連結到此小節">#</a><span class="h-zh">過敏反應與過敏性休克</span><span class="h-en">Allergic Reaction &amp; Anaphylaxis</span></h3>
 <ul>
 <li>辨識呼吸道腫脹、喘鳴、哮鳴、低血壓或蕁麻疹<ul>
 <li class="en-line"><em class="en">Recognize airway swelling, stridor, wheezing, hypotension, or hives.</em></li>
@@ -4787,7 +4807,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch19-7"><h3 id="ch19-7"><a class="anchor" href="#ch19-7" aria-label="連結到此小節">#</a><span class="h-zh">PCC 中的敗血症</span><span class="h-en">Sepsis in PCC</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：腎上腺素自動注射筆"><img src="images/ch19-p07-dd434d.webp" width="316" height="329" alt="腎上腺素自動注射筆" loading="lazy" decoding="async"></button><figcaption>腎上腺素自動注射筆<span>原簡報 p.7</span></figcaption></figure></div></section><section class="sub" data-sid="ch19-7"><h3 id="ch19-7"><a class="anchor" href="#ch19-7" aria-label="連結到此小節">#</a><span class="h-zh">PCC 中的敗血症</span><span class="h-en">Sepsis in PCC</span></h3>
 <ul>
 <li><strong>敗血症</strong>：宿主對感染的失調反應所造成、危及生命的器官功能障礙<ul>
 <li class="en-line"><em class="en">Sepsis: Life-threatening organ dysfunction caused by a dysregulated host response to infection</em></li>
@@ -4869,7 +4889,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </ul>
 </li>
 </ul>
-</section><section class="sub" data-sid="ch19-10"><h3 id="ch19-10"><a class="anchor" href="#ch19-10" aria-label="連結到此小節">#</a><span class="h-zh">NEWS2 評分</span><span class="h-en">NEWS2 Scoring</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：生命徵象流程表"><img src="images/ch19-p11-58bf5e.webp" width="980" height="746" alt="生命徵象流程表" loading="lazy" decoding="async"></button><figcaption>生命徵象流程表<span>原簡報 p.11</span></figcaption></figure></div></section><section class="sub" data-sid="ch19-10"><h3 id="ch19-10"><a class="anchor" href="#ch19-10" aria-label="連結到此小節">#</a><span class="h-zh">NEWS2 評分</span><span class="h-en">NEWS2 Scoring</span></h3>
 <ul>
 <li>監測呼吸速率、SpO2、收縮壓、脈搏、意識程度、體溫、是否用氧<ul>
 <li class="en-line"><em class="en">Monitors RR, SpO₂, SBP, pulse, LOC, temperature, O₂ use</em></li>
@@ -4922,7 +4942,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </li>
 </ul>
 <p>來源：英國皇家內科醫師學會（RCP）NEWS2 評分表及實施指引　<em class="en">Source: Royal College of Physicians • NEWS2 charts and additional implementation guidance</em></p>
-</section><section class="sub" data-sid="ch19-11"><h3 id="ch19-11"><a class="anchor" href="#ch19-11" aria-label="連結到此小節">#</a><span class="h-zh">敗血症輸液：重新評估反應</span><span class="h-en">Sepsis fluids: reassess the response</span></h3>
+<div class="figs"><figure><button class="zoom" type="button" aria-label="放大圖片：NEWS2 評分表"><img src="images/ch19-p12-82c542.webp" width="1400" height="963" alt="NEWS2 評分表" loading="lazy" decoding="async"></button><figcaption>NEWS2 評分表<span>原簡報 p.12</span></figcaption></figure><figure><button class="zoom" type="button" aria-label="放大圖片：NEWS2 臨床應變分級"><img src="images/ch19-p12-3139c7.webp" width="1400" height="362" alt="NEWS2 臨床應變分級" loading="lazy" decoding="async"></button><figcaption>NEWS2 臨床應變分級<span>原簡報 p.12</span></figcaption></figure></div></section><section class="sub" data-sid="ch19-11"><h3 id="ch19-11"><a class="anchor" href="#ch19-11" aria-label="連結到此小節">#</a><span class="h-zh">敗血症輸液：重新評估反應</span><span class="h-en">Sepsis fluids: reassess the response</span></h3>
 <ul>
 <li>課程首選輸液：LR 或 Plasma-Lyte，其次 NS。重新評估適應症與體液狀態<ul>
 <li class="en-line"><em class="en">Preferred fluids in the course: LR or Plasma-Lyte, then NS. Reassess the indication and volume status.</em></li>
@@ -4997,7 +5017,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
 </li>
 </ul>
 <p>（「抗生素參考」一頁為圖片。）</p>
-</section><section class="sub" data-sid="ch19-15"><h3 id="ch19-15"><a class="anchor" href="#ch19-15" aria-label="連結到此小節">#</a><span class="h-zh">輔助用藥</span><span class="h-en">Ancillary Medications – Purpose</span></h3>
+<div class="figs one"><figure><button class="zoom" type="button" aria-label="放大圖片：抗生素參考表"><img src="images/ch19-p18-019efc.webp" width="907" height="561" alt="抗生素參考表" loading="lazy" decoding="async"></button><figcaption>抗生素參考表<span>原簡報 p.18</span></figcaption></figure></div></section><section class="sub" data-sid="ch19-15"><h3 id="ch19-15"><a class="anchor" href="#ch19-15" aria-label="連結到此小節">#</a><span class="h-zh">輔助用藥</span><span class="h-en">Ancillary Medications – Purpose</span></h3>
 <ul>
 <li>治療發燒、噃心、過敏症狀、支氣管痙攣；處理副作用<ul>
 <li class="en-line"><em class="en">Treat fever, nausea, allergic symptoms, bronchospasm; Manage side effects</em></li>
@@ -5116,6 +5136,13 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
     <footer class="foot">本講義為課程教材翻譯，劑量與目標值照原文翻譯。臨床使用請以最新版 JTS CPG、CoTCCC 指引及所屬單位醫療指揮為準。</footer>
   </main>
 </div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="圖片檢視">
+  <button class="nav pv" id="lbPrev" aria-label="上一張">‹</button>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+  <button id="lbClose" aria-label="關閉">✕</button>
+  <button class="nav" id="lbNext" style="top:50%" aria-label="下一張">›</button>
+</div>
 <button class="btn totop" id="totop" aria-label="回到頁首">↑ 頁首</button>
 
 <script>
@@ -5131,6 +5158,31 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
   function setEn(on){ body.classList.toggle('hide-en', !on); enBtn.setAttribute('aria-pressed', on ? 'true' : 'false'); store.set('pcc-en', on ? '1' : '0'); }
   setEn(store.get('pcc-en') !== '0');
   enBtn.addEventListener('click', () => setEn(body.classList.contains('hide-en')));
+
+
+  // images toggle
+  const imgBtn = document.getElementById('imgBtn');
+  function setImg(on){ body.classList.toggle('hide-img', !on); imgBtn.setAttribute('aria-pressed', on ? 'true' : 'false'); store.set('pcc-img', on ? '1' : '0'); }
+  setImg(store.get('pcc-img') !== '0');
+  imgBtn.addEventListener('click', () => setImg(body.classList.contains('hide-img')));
+
+  // lightbox
+  const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
+  let group = [], gi = 0, lastFocus = null;
+  function show(){ const f = group[gi]; const im = f.querySelector('img'); lbImg.src = im.src; lbImg.alt = im.alt; lbCap.textContent = f.querySelector('figcaption').firstChild.textContent + (group.length > 1 ? '（' + (gi + 1) + '／' + group.length + '）' : ''); 
+    document.getElementById('lbPrev').style.display = document.getElementById('lbNext').style.display = group.length > 1 ? '' : 'none'; }
+  document.addEventListener('click', e => {
+    const z = e.target.closest('.zoom'); if (!z) return;
+    const fig = z.closest('figure'); group = [...fig.parentElement.querySelectorAll('figure')]; gi = group.indexOf(fig);
+    lastFocus = z; show(); lb.classList.add('open'); document.getElementById('lbClose').focus();
+  });
+  function lbClose(){ lb.classList.remove('open'); lbImg.src = ''; if (lastFocus) lastFocus.focus(); }
+  document.getElementById('lbClose').onclick = lbClose;
+  document.getElementById('lbPrev').onclick = e => { e.stopPropagation(); gi = (gi - 1 + group.length) % group.length; show(); };
+  document.getElementById('lbNext').onclick = e => { e.stopPropagation(); gi = (gi + 1) % group.length; show(); };
+  lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
+  document.addEventListener('keydown', e => { if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lbClose(); else if (e.key === 'ArrowRight' && group.length > 1){ gi = (gi + 1) % group.length; show(); } else if (e.key === 'ArrowLeft' && group.length > 1){ gi = (gi - 1 + group.length) % group.length; show(); } });
 
   // font size
   let fs = parseInt(store.get('pcc-fs') || '17', 10);
@@ -5179,7 +5231,7 @@ body.hide-en em.en, body.hide-en .en-line, body.hide-en .h-en, body.hide-en .cen
     t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash');
   }
   window.addEventListener('hashchange', flash);
-  if (location.hash){ const go = () => { const el = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (el){ el.scrollIntoView(); flash(); } }; if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => setTimeout(go, 30)); else window.addEventListener('load', go); }
+  if (location.hash){ const go = () => { const el = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (el){ el.scrollIntoView(); flash(); } }; if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => setTimeout(go, 30)); window.addEventListener('load', () => setTimeout(go, 50)); }
 
   // search index
   const idx = [];
